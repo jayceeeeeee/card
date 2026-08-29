@@ -14,7 +14,10 @@
 
     <header class="info-banner">
         <div class="banner-inner">
+            <div class="banner-message">
+                <a class="donation-button banner-donation" href="#">Donate</a>
             <p>This website is a Technomantic (機術) Temple directly connected to the Heavens, Earth, Yogananda and many other Immortals at its source.</p>
+            </div>
             <img src="paramahansa-yogananda-yogoda-satsanga-society-of-india-front.jpg" alt="Paramahansa Yogananda">
         </div>
     </header>
@@ -27,14 +30,6 @@
     </p>-->
 
     <main class="card-page">
-        <section class="funding-card" aria-labelledby="funding-title">
-            <a class="donation-button" href="#" id="funding-title">Donate</a>
-            <div class="funding-meter" aria-label="Donation progress toward 100000 Euros">
-                <span style="width: 7%"></span>
-            </div>
-            <p class="funding-meta">0 EUR / 100000 EUR</p>
-        </section>
-
         <section class="profile-card" aria-labelledby="profile-title">
             <div class="profile-heading">
                 <div class="profile-avatar">
@@ -58,22 +53,6 @@
                 <p>
                     I lead a War from the 10th Dimension using Technomancy (機術) - the art of connecting Technology with Energy to alter reality - and free Humanity.
                 </p>
-
-                <div class="profile-contact" aria-label="Contact links">
-                    <span class="contact-label">Contract me:</span>
-                    <a href="mailto:jaubertcedric13@gmail.com" aria-label="Send an email to Cedric">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M4 6h16v12H4z"></path>
-                            <path d="m4 7 8 6 8-6"></path>
-                        </svg>
-                    </a>
-                    <a href="https://wa.me/33786625391" aria-label="Contact Cedric on WhatsApp">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M19.2 12.1a7.2 7.2 0 0 1-10.4 6.4L5 19.4l1-3.7a7.2 7.2 0 1 1 13.2-3.6Z"></path>
-                            <path d="M9.6 8.8c.2-.3.4-.4.6-.3h.5c.2 0 .3.1.4.3l.5 1.2c.1.2.1.4-.1.6l-.3.4c.5 1 1.2 1.7 2.2 2.2l.4-.4c.2-.2.4-.2.6-.1l1.2.6c.2.1.3.2.3.4v.4c0 .3-.2.5-.5.6-.4.1-.8.2-1.3.1-2.3-.4-4.6-2.7-5-5-.1-.4 0-.8.1-1Z"></path>
-                        </svg>
-                    </a>
-                </div>
             </div>
         </section>
 
@@ -83,7 +62,7 @@
             </button>
 
             <button class="action-tile" type="button" data-section-target="volunteering" aria-pressed="false">
-                <span>Volunteer</span>
+                <span>Volunteering</span>
             </button>
 
             <button class="action-tile" type="button" data-section-target="services" aria-pressed="false">
@@ -152,7 +131,7 @@
         </section>
 
         <section class="content-section" aria-labelledby="volunteering-title" data-section-panel="volunteering" hidden>
-            <p class="eyebrow">Volunteer</p>
+            <p class="eyebrow">Volunteering</p>
             <h2 id="volunteering-title">Open source temple</h2>
             <div class="info-card">
                 <p>This section will present how people can help build this website as an open-source GitHub project.</p>
@@ -190,6 +169,24 @@
             </div>
         </section>
     </main>
+
+    <footer class="contact-footer">
+        <div class="footer-contact" aria-label="Contact links">
+            <span class="contact-label">Contract me:</span>
+            <a href="mailto:jaubertcedric13@gmail.com" aria-label="Send an email to Cedric">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 6h16v12H4z"></path>
+                    <path d="m4 7 8 6 8-6"></path>
+                </svg>
+            </a>
+            <a href="https://wa.me/33786625391" aria-label="Contact Cedric on WhatsApp">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19.2 12.1a7.2 7.2 0 0 1-10.4 6.4L5 19.4l1-3.7a7.2 7.2 0 1 1 13.2-3.6Z"></path>
+                    <path d="M9.6 8.8c.2-.3.4-.4.6-.3h.5c.2 0 .3.1.4.3l.5 1.2c.1.2.1.4-.1.6l-.3.4c.5 1 1.2 1.7 2.2 2.2l.4-.4c.2-.2.4-.2.6-.1l1.2.6c.2.1.3.2.3.4v.4c0 .3-.2.5-.5.6-.4.1-.8.2-1.3.1-2.3-.4-4.6-2.7-5-5-.1-.4 0-.8.1-1Z"></path>
+                </svg>
+            </a>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

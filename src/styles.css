@@ -74,8 +74,16 @@ body::before {
     align-items: center;
 }
 
-.info-banner p {
+.banner-message {
     grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.info-banner p {
     margin: 0;
     color: var(--green-soft);
     font-family: "Rajdhani", Arial, sans-serif;
@@ -100,7 +108,7 @@ body::before {
 .card-page {
     width: min(100% - 28px, 560px);
     margin: 0 auto;
-    padding: 112px 0 64px;
+    padding: 112px 0 96px;
 }
 
 .action-grid {
@@ -162,23 +170,6 @@ body::before {
     text-transform: uppercase;
 }
 
-.funding-card {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 24px;
-    padding: 12px;
-    border: 1px solid rgba(40, 255, 130, 0.24);
-    border-radius: 8px;
-    background:
-        linear-gradient(135deg, rgba(40, 255, 130, 0.1), transparent 48%),
-        rgba(8, 11, 10, 0.78);
-    box-shadow:
-        0 18px 54px rgba(0, 0, 0, 0.34),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
 .donation-button {
     flex: 0 0 auto;
     min-height: 38px;
@@ -200,36 +191,16 @@ body::before {
     transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
+.banner-donation {
+    min-height: 34px;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+}
+
 .donation-button:hover,
 .donation-button:focus-visible {
     transform: translateY(-1px);
     box-shadow: 0 12px 30px rgba(40, 255, 130, 0.2);
-}
-
-.funding-meter {
-    height: 9px;
-    padding: 2px;
-    border: 1px solid rgba(182, 188, 184, 0.16);
-    border-radius: 999px;
-    background: rgba(0, 0, 0, 0.38);
-    overflow: hidden;
-}
-
-.funding-meter span {
-    display: block;
-    height: 100%;
-    border-radius: inherit;
-    background: linear-gradient(90deg, var(--green), var(--green-soft));
-    box-shadow: 0 0 14px rgba(40, 255, 130, 0.38);
-}
-
-.funding-meta {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.9rem;
-    font-weight: 600;
-    line-height: 1;
-    white-space: nowrap;
 }
 
 .profile-card,
@@ -397,14 +368,27 @@ h3 {
     line-height: 1.55;
 }
 
-.profile-contact {
-    grid-column: 1 / -1;
+.contact-footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    padding: 10px 14px;
+    border-top: 1px solid rgba(40, 255, 130, 0.22);
+    background: rgba(4, 6, 5, 0.9);
+    box-shadow: 0 -10px 34px rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(16px);
+}
+
+.footer-contact {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     column-gap: 2px;
     row-gap: 8px;
-    margin-top: -4px;
 }
 
 .contact-label {
@@ -418,7 +402,7 @@ h3 {
     text-transform: none;
 }
 
-.profile-contact a {
+.footer-contact a {
     width: 28px;
     min-height: 28px;
     display: inline-flex;
@@ -431,14 +415,14 @@ h3 {
     transition: color 160ms ease, opacity 160ms ease, transform 160ms ease;
 }
 
-.profile-contact a:hover,
-.profile-contact a:focus-visible {
+.footer-contact a:hover,
+.footer-contact a:focus-visible {
     color: var(--green);
     opacity: 1;
     transform: translateY(-1px);
 }
 
-.profile-contact svg {
+.footer-contact svg {
     width: 23px;
     height: 23px;
     fill: none;
@@ -535,7 +519,7 @@ h3 {
 @media (max-width: 620px) {
     .card-page {
         width: min(100% - 20px, 560px);
-        padding-top: 118px;
+        padding: 118px 0 96px;
     }
 
     .info-banner {
@@ -544,25 +528,28 @@ h3 {
     }
 
     .banner-inner {
-        grid-template-columns: 34px minmax(0, 1fr) 34px;
+        grid-template-columns: minmax(0, 1fr) 34px;
         gap: 8px;
     }
 
+    .banner-message {
+        grid-column: 1;
+        justify-content: flex-start;
+    }
+
     .info-banner img {
+        grid-column: 2;
         width: 34px;
+    }
+
+    .banner-donation {
+        min-height: 30px;
+        padding: 7px 9px;
+        font-size: 0.72rem;
     }
 
     .action-tile {
         flex-basis: calc(50% - 4px);
-    }
-
-    .funding-card {
-        grid-template-columns: auto minmax(120px, 1fr);
-    }
-
-    .funding-meta {
-        grid-column: 1 / -1;
-        text-align: right;
     }
 
     .profile-card {
