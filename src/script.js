@@ -45,22 +45,31 @@ drawRain();
 window.addEventListener("resize", resizeCanvas);
 
 const sectionButtons = document.querySelectorAll("[data-section-target]");
+const sectionLinks = document.querySelectorAll("[data-section-link]");
 const sectionPanels = document.querySelectorAll("[data-section-panel]");
+
+function showSection(target) {
+    sectionButtons.forEach((sectionButton) => {
+        const isActive = sectionButton.dataset.sectionTarget === target;
+        sectionButton.classList.toggle("is-active", isActive);
+        sectionButton.setAttribute("aria-pressed", String(isActive));
+    });
+
+    sectionPanels.forEach((panel) => {
+        const isTargetPanel = panel.dataset.sectionPanel === target;
+        panel.hidden = !isTargetPanel;
+        panel.classList.toggle("is-visible", isTargetPanel);
+    });
+}
 
 sectionButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        const target = button.dataset.sectionTarget;
+        showSection(button.dataset.sectionTarget);
+    });
+});
 
-        sectionButtons.forEach((sectionButton) => {
-            const isActive = sectionButton === button;
-            sectionButton.classList.toggle("is-active", isActive);
-            sectionButton.setAttribute("aria-pressed", String(isActive));
-        });
-
-        sectionPanels.forEach((panel) => {
-            const isTargetPanel = panel.dataset.sectionPanel === target;
-            panel.hidden = !isTargetPanel;
-            panel.classList.toggle("is-visible", isTargetPanel);
-        });
+sectionLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        showSection(link.dataset.sectionLink);
     });
 });

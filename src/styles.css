@@ -361,7 +361,7 @@ h3 {
 }
 
 .profile-body > p,
-.timeline-card > p:last-child,
+.timeline-card > p,
 .vision-card p {
     color: var(--muted);
     font-size: 1.08rem;
@@ -453,7 +453,7 @@ h3 {
     margin-bottom: 14px;
 }
 
-.timeline-card > p:last-child,
+.timeline-card > p,
 .vision-card p:last-child,
 .info-card p:last-child {
     margin-bottom: 0;
@@ -485,6 +485,68 @@ h3 {
     font-weight: 600;
     line-height: 1.3;
     text-align: right;
+}
+
+.timeline-actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.timeline-link,
+.timeline-icon {
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(40, 255, 130, 0.32);
+    border-radius: 6px;
+    background:
+        linear-gradient(145deg, rgba(40, 255, 130, 0.1), rgba(8, 11, 10, 0.2) 42%),
+        rgba(8, 11, 10, 0.82);
+    color: var(--green);
+    font: inherit;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.timeline-link {
+    padding: 9px 16px;
+    text-transform: uppercase;
+}
+
+.timeline-icon {
+    width: 36px;
+    padding: 0;
+}
+
+.timeline-link:hover,
+.timeline-link:focus-visible,
+.timeline-icon:hover,
+.timeline-icon:focus-visible {
+    border-color: rgba(40, 255, 130, 0.78);
+    background:
+        linear-gradient(145deg, var(--green), rgba(157, 255, 199, 0.86)),
+        var(--green);
+    color: #031007;
+    transform: translateY(-1px);
+}
+
+.timeline-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
 }
 
 .timeline-card:not(:last-child)::before {
