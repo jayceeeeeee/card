@@ -47,29 +47,48 @@ window.addEventListener("resize", resizeCanvas);
 const sectionButtons = document.querySelectorAll("[data-section-target]");
 const sectionLinks = document.querySelectorAll("[data-section-link]");
 const sectionPanels = document.querySelectorAll("[data-section-panel]");
+const defaultSection = "experiences";
 
-function showSection(target) {
+function getKnownSection(target) {
+    return Array.from(sectionPanels).some((panel) => panel.dataset.sectionPanel === target)
+        ? target
+        : defaultSection;
+}
+
+function showSection(target, options = {}) {
+    const nextSection = getKnownSection(target);
+
     sectionButtons.forEach((sectionButton) => {
-        const isActive = sectionButton.dataset.sectionTarget === target;
+        const isActive = sectionButton.dataset.sectionTarget === nextSection;
         sectionButton.classList.toggle("is-active", isActive);
         sectionButton.setAttribute("aria-pressed", String(isActive));
     });
 
     sectionPanels.forEach((panel) => {
-        const isTargetPanel = panel.dataset.sectionPanel === target;
+        const isTargetPanel = panel.dataset.sectionPanel === nextSection;
         panel.hidden = !isTargetPanel;
         panel.classList.toggle("is-visible", isTargetPanel);
     });
+
+    if (options.updateHash) {
+        history.pushState(null, "", `#${nextSection}`);
+    }
 }
 
 sectionButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        showSection(button.dataset.sectionTarget);
+        showSection(button.dataset.sectionTarget, { updateHash: true });
     });
 });
 
 sectionLinks.forEach((link) => {
     link.addEventListener("click", () => {
-        showSection(link.dataset.sectionLink);
+        showSection(link.dataset.sectionLink, { updateHash: true });
     });
 });
+
+window.addEventListener("hashchange", () => {
+    showSection(window.location.hash.slice(1));
+});
+
+showSection(window.location.hash.slice(1) || defaultSection);
