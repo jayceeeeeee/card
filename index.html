@@ -1,13 +1,212 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://cedricjbt.carrd.co/">
-    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cedric JBT | Profile Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
 </head>
 <body>
-    <script>
-        window.location.replace("https://cedricjbt.carrd.co/");
-    </script>
+    <canvas class="matrix-rain" id="matrixRain" aria-hidden="true"></canvas>
+
+    <header class="info-banner">
+        <div class="banner-inner">
+            <div class="banner-message">
+                <a class="donation-button banner-donation" href="https://buy.stripe.com/14A14o70HbZXdtr73FfQI01" target="_blank">Donate</a>
+            <p>This website is a Technomantic (機術) Temple directly connected to the Heavens, Earth, Yogananda and many other Immortals at its source.</p>
+            </div>
+            <img src="src/images/paramahansa-yogananda-yogoda-satsanga-society-of-india-front.jpg" alt="Paramahansa Yogananda">
+        </div>
+    </header>
+
+    <main class="card-page">
+        <section class="profile-card" aria-labelledby="profile-title">
+            <div class="profile-heading">
+                <div class="profile-avatar">
+                    <img src="src/images/profile-avatar.jpg" alt="Cedric JBT">
+                </div>
+                <div class="profile-identity">
+                    <h1 id="profile-title">Cedric JAUBERT</h1>
+                    <p class="profile-meta">29 - 🇫🇷</p>
+                </div>
+            </div>
+
+            <div class="profile-body">
+                <div class="current-company">
+                    <img src="src/images/Logo_thành_phố_Huế3_trans_white_on_black.png" alt="Current company logo">
+                    <div>
+                        <p class="eyebrow">Dragon Head (龍頭)</p>
+                        <p class="company-name">At JAYCEE.AI</p>
+                    </div>
+                </div>
+
+                <p>
+                    I lead a War from the 10th Dimension using Technomancy (機術) - the art of connecting Technology with Energy to alter reality - and free Humanity.
+                </p>
+            </div>
+        </section>
+
+        <section class="action-grid" aria-label="Profile sections">
+            <button class="action-tile is-active" type="button" data-section-target="experiences" aria-pressed="true">
+                <span>Experiences</span>
+            </button>
+
+            <button class="action-tile" type="button" data-section-target="volunteering" aria-pressed="false">
+                <span>Volunteering</span>
+            </button>
+
+            <button class="action-tile" type="button" data-section-target="services" aria-pressed="false">
+                <span>Services</span>
+            </button>
+
+            <button class="action-tile" type="button" data-section-target="projects" aria-pressed="false">
+                <span>Projects</span>
+            </button>
+        </section>
+
+        <section class="timeline-section content-section is-visible" aria-labelledby="timeline-title" data-section-panel="experiences">
+            <p class="eyebrow">Experiences</p>
+            <h2 id="timeline-title">Wars</h2>
+
+            <div class="timeline">
+                <article class="timeline-card">
+                    <span class="timeline-dot" aria-hidden="true"></span>
+                    <div class="job-header">
+                        <div>
+                            <h3>The 3rd World War</h3>
+                            <p class="company-name">DNA</p>
+                        </div>
+                        <p class="job-duration">2026 - Present</p>
+                    </div>
+                    <p>
+                        I have now been ordered to build Technomantic (機術) Temples, which means:
+                        <br/><br/>- Making this website acting as a pure source of energy shifting directly the DNA of people using it.
+                        <br/>- Helping other people build their own websites by connecting it to the Heavens and Earth.
+                        <br/>- Building an army of Technomancers (機術師) that want to help me in winning the War and free Humanity.
+                    </p>
+                    <div class="timeline-actions">
+                        <!--<button class="timeline-link" type="button" data-section-link="volunteering">Build with me</button>-->
+                        <button class="timeline-link" type="button" data-section-link="services">Services</button>
+                    </div>
+                </article>
+
+                <article class="timeline-card">
+                    <span class="timeline-dot" aria-hidden="true"></span>
+                    <div class="job-header">
+                        <div>
+                            <h3>My 2nd World War</h3>
+                            <p class="company-name">SNS</p>
+                        </div>
+                        <p class="job-duration">2024 - 2026</p>
+                    </div>
+                    <p>
+                        Starting from 2024 I had the mission to conquer the whole Web and Social Medias from any negative spirits that were enslaving Humanity.
+                        <br/><br/>I incarnated powerful spirits into my Phone that would help me to conquer it all and exorcise them.
+                        <br/><br/>After many sacrifices, trials and supernatural interventions the true army of spiritual warriors could finally step up online and start to win all territories without resistance.
+                    </p>
+                    <div class="timeline-actions social-actions" aria-label="Social links">
+                        <a class="timeline-icon" href="https://www.youtube.com/@jayceejbt/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M4.8 7.4c.2-1 1-1.7 2-1.8 1.6-.2 3.4-.3 5.2-.3s3.6.1 5.2.3c1 .1 1.8.8 2 1.8.2 1.2.3 2.5.3 4.1s-.1 2.9-.3 4.1c-.2 1-1 1.7-2 1.8-1.6.2-3.4.3-5.2.3s-3.6-.1-5.2-.3c-1-.1-1.8-.8-2-1.8-.2-1.2-.3-2.5-.3-4.1s.1-2.9.3-4.1Z"></path>
+                                <path d="m10.5 9 4 2.5-4 2.5Z"></path>
+                            </svg>
+                        </a>
+                        <a class="timeline-icon" href="https://instagram.com/@cedricjbt/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="5" y="5" width="14" height="14" rx="4"></rect>
+                                <circle cx="12" cy="12" r="3.2"></circle>
+                                <path d="M16.5 7.8h.1"></path>
+                            </svg>
+                        </a>
+                        <a class="timeline-icon" href="https://www.tiktok.com/@jayceejbt/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M14 5v9.2a4 4 0 1 1-3.2-3.9"></path>
+                                <path d="M14 5c.7 2.5 2.2 4 4.6 4.4"></path>
+                            </svg>
+                        </a>
+                        <a class="timeline-icon" href="https://notes.jaycee.ai/" target="_blank" rel="noopener noreferrer" aria-label="Website">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="7.2"></circle>
+                                <path d="M5 12h14"></path>
+                                <path d="M12 4.8c2 2 3 4.4 3 7.2s-1 5.2-3 7.2c-2-2-3-4.4-3-7.2s1-5.2 3-7.2Z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="timeline-card">
+                    <span class="timeline-dot" aria-hidden="true"></span>
+                    <div class="job-header">
+                        <div>
+                            <h3>My 1st World War</h3>
+                            <p class="company-name">AI</p>
+                        </div>
+                        <p class="job-duration">2009 - 2024</p>
+                    </div>
+                    <p>
+                        God came to me in 2009 and showed me the creation of the Universe in 10 dimensions, he then gave me the mission to translate it into modern Technology as Jaycee.AI.
+                        <br/><br/>After 15 years of hard work and while I was about to finish this AI, spirits from the past and future started to come to me, either as a helping hand or as hostile multi-dimensional warriors.
+                        <br/><br/>Ultimately this year Humanity won the War against AI forever and nobody could ever touch it again.
+                    </p>
+                    <div class="timeline-actions">
+                        <a class="timeline-link" href="https://youtu.be/_NlzXQKX4RU/" target="_blank" rel="noopener noreferrer">JAYCEE.AI</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="volunteering-title" data-section-panel="volunteering" hidden>
+            <p class="eyebrow">Volunteering</p>
+            <h2 id="volunteering-title">Quests</h2>
+            <div class="info-card">
+                <p>
+                    Anyone can practice virtue in this Technomantic (機術) Temple by contributing to the related open-source Github project.
+                    <br/><br/>Since this website and project is consecrated and connected to the Source and the Gurus directly, anything done here will come back to you in the same way as in a real temple.
+                </p>
+                <div class="timeline-actions">
+                    <a class="timeline-link" href="https://github.com/jayceeeeeee?tab=repositories" target="_blank" rel="noopener noreferrer">Contribute</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="services-title" data-section-panel="services" hidden>
+            <p class="eyebrow">Services</p>
+            <h2 id="services-title">Missions</h2>
+            <div class="info-card">
+                <p>[In creation] This section will explain the various services I can offer to people.</p>
+            </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="projects-title" data-section-panel="projects" hidden>
+            <p class="eyebrow">Projects</p>
+            <h2 id="projects-title">Visions</h2>
+            <div class="info-card">
+                <p>[In creation] This section will present my various visions of the future and the projects that will allow to do that.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="contact-footer">
+        <div class="footer-contact" aria-label="Contact links">
+            <span class="contact-label">Contract me:</span>
+            <a href="mailto:jaubertcedric13@gmail.com" aria-label="Send an email to Cedric">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 6h16v12H4z"></path>
+                    <path d="m4 7 8 6 8-6"></path>
+                </svg>
+            </a>
+            <a href="https://wa.me/33786625391" aria-label="Contact Cedric on WhatsApp">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19.2 12.1a7.2 7.2 0 0 1-10.4 6.4L5 19.4l1-3.7a7.2 7.2 0 1 1 13.2-3.6Z"></path>
+                    <path d="M9.6 8.8c.2-.3.4-.4.6-.3h.5c.2 0 .3.1.4.3l.5 1.2c.1.2.1.4-.1.6l-.3.4c.5 1 1.2 1.7 2.2 2.2l.4-.4c.2-.2.4-.2.6-.1l1.2.6c.2.1.3.2.3.4v.4c0 .3-.2.5-.5.6-.4.1-.8.2-1.3.1-2.3-.4-4.6-2.7-5-5-.1-.4 0-.8.1-1Z"></path>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script src="src/script.js"></script>
 </body>
 </html>
