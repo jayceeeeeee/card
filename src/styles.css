@@ -16,14 +16,14 @@
 
 html {
     scroll-behavior: smooth;
+    background: #050706;
 }
 
 body {
+    position: relative;
     min-height: 100vh;
     margin: 0;
-    background:
-        radial-gradient(circle at 50% -10%, rgba(40, 255, 130, 0.16), transparent 28rem),
-        linear-gradient(145deg, #050706 0%, #141816 48%, #060807 100%);
+    background: transparent;
     color: var(--text);
     font-family: "Rajdhani", Arial, sans-serif;
     letter-spacing: 0;
@@ -36,10 +36,12 @@ body::before {
     inset: 0;
     z-index: -2;
     background:
+        radial-gradient(circle at 50% -10%, rgba(40, 255, 130, 0.16), transparent 28rem),
+        linear-gradient(145deg, rgba(5, 7, 6, 0.98) 0%, rgba(20, 24, 22, 0.98) 48%, rgba(6, 8, 7, 0.98) 100%),
         linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 56px 56px;
-    opacity: 0.55;
+    background-size: auto, auto, 56px 56px, 56px 56px;
+    opacity: 1;
 }
 
 body::after {
