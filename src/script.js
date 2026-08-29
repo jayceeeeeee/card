@@ -4,6 +4,10 @@ const context = canvas.getContext("2d");
 const glyphs = "01<>[]{}:/SYSTEMPROFILEEXPERIENCECEDRICJBT";
 let columns = [];
 let frame = 0;
+let lastRainDraw = 0;
+const rainFrameDuration = 1000 / 30;
+const columnWidth = 24;
+const glyphStep = 20;
 
 function resizeCanvas() {
     const density = window.devicePixelRatio || 1;
@@ -13,27 +17,33 @@ function resizeCanvas() {
     canvas.style.height = `${window.innerHeight}px`;
     context.setTransform(density, 0, 0, density, 0, 0);
 
-    const columnCount = Math.ceil(window.innerWidth / 18);
+    const columnCount = Math.ceil(window.innerWidth / columnWidth);
     columns = Array.from({ length: columnCount }, () => Math.random() * window.innerHeight);
 }
 
-function drawRain() {
+function drawRain(timestamp = 0) {
+    if (timestamp - lastRainDraw < rainFrameDuration) {
+        requestAnimationFrame(drawRain);
+        return;
+    }
+
+    lastRainDraw = timestamp;
     frame += 1;
     context.fillStyle = "rgba(5, 7, 6, 0.11)";
     context.fillRect(0, 0, window.innerWidth, window.innerHeight);
 
-    context.font = "16px 'Share Tech Mono', monospace";
+    context.font = "15px 'Share Tech Mono', monospace";
     context.textAlign = "center";
 
     columns.forEach((y, index) => {
         const character = glyphs[Math.floor(Math.random() * glyphs.length)];
-        const x = index * 18 + 9;
+        const x = index * columnWidth + columnWidth / 2;
         const glow = frame % 12 === 0 ? 0.95 : 0.58;
 
         context.fillStyle = `rgba(38, 255, 129, ${glow})`;
         context.fillText(character, x, y);
 
-        columns[index] = y > window.innerHeight + Math.random() * 800 ? 0 : y + 18;
+        columns[index] = y > window.innerHeight + Math.random() * 800 ? 0 : y + glyphStep;
     });
 
     requestAnimationFrame(drawRain);
