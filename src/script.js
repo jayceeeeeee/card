@@ -43,3 +43,24 @@ resizeCanvas();
 drawRain();
 
 window.addEventListener("resize", resizeCanvas);
+
+const sectionButtons = document.querySelectorAll("[data-section-target]");
+const sectionPanels = document.querySelectorAll("[data-section-panel]");
+
+sectionButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const target = button.dataset.sectionTarget;
+
+        sectionButtons.forEach((sectionButton) => {
+            const isActive = sectionButton === button;
+            sectionButton.classList.toggle("is-active", isActive);
+            sectionButton.setAttribute("aria-pressed", String(isActive));
+        });
+
+        sectionPanels.forEach((panel) => {
+            const isTargetPanel = panel.dataset.sectionPanel === target;
+            panel.hidden = !isTargetPanel;
+            panel.classList.toggle("is-visible", isTargetPanel);
+        });
+    });
+});

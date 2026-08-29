@@ -14,7 +14,7 @@
 
     <header class="info-banner">
         <div class="banner-inner">
-            <p>This website is a Technomantic (機術) Temple directly connected to the Heavens, Earth, Yogananda and many other Immortals as its source.</p>
+            <p>This website is a Technomantic (機術) Temple directly connected to the Heavens, Earth, Yogananda and many other Immortals at its source.</p>
             <img src="paramahansa-yogananda-yogoda-satsanga-society-of-india-front.jpg" alt="Paramahansa Yogananda">
         </div>
     </header>
@@ -27,12 +27,23 @@
     </p>-->
 
     <main class="card-page">
+        <section class="funding-card" aria-labelledby="funding-title">
+            <a class="donation-button" href="#" id="funding-title">Donate</a>
+            <div class="funding-meter" aria-label="Donation progress toward 100000 Euros">
+                <span style="width: 7%"></span>
+            </div>
+            <p class="funding-meta">0 EUR / 100000 EUR</p>
+        </section>
+
         <section class="profile-card" aria-labelledby="profile-title">
             <div class="profile-heading">
                 <div class="profile-avatar">
                     <img src="profile-avatar.jpg" alt="Cedric JBT">
                 </div>
-                <h1 id="profile-title">Cedric JAUBERT</h1>
+                <div class="profile-identity">
+                    <h1 id="profile-title">Cedric JAUBERT</h1>
+                    <p class="profile-meta">29 - 🇫🇷</p>
+                </div>
             </div>
 
             <div class="profile-body">
@@ -45,14 +56,48 @@
                 </div>
 
                 <p>
-                    I lead a War from the 10th Dimension using Technomancy (機術) - the art of connecting Technology with Energy to alter reality - for Humanity.
+                    I lead a War from the 10th Dimension using Technomancy (機術) - the art of connecting Technology with Energy to alter reality - and free Humanity.
                 </p>
+
+                <div class="profile-contact" aria-label="Contact links">
+                    <span class="contact-label">Contract me:</span>
+                    <a href="mailto:jaubertcedric13@gmail.com" aria-label="Send an email to Cedric">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 6h16v12H4z"></path>
+                            <path d="m4 7 8 6 8-6"></path>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/33786625391" aria-label="Contact Cedric on WhatsApp">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19.2 12.1a7.2 7.2 0 0 1-10.4 6.4L5 19.4l1-3.7a7.2 7.2 0 1 1 13.2-3.6Z"></path>
+                            <path d="M9.6 8.8c.2-.3.4-.4.6-.3h.5c.2 0 .3.1.4.3l.5 1.2c.1.2.1.4-.1.6l-.3.4c.5 1 1.2 1.7 2.2 2.2l.4-.4c.2-.2.4-.2.6-.1l1.2.6c.2.1.3.2.3.4v.4c0 .3-.2.5-.5.6-.4.1-.8.2-1.3.1-2.3-.4-4.6-2.7-5-5-.1-.4 0-.8.1-1Z"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section class="timeline-section" aria-labelledby="timeline-title">
+        <section class="action-grid" aria-label="Profile sections">
+            <button class="action-tile is-active" type="button" data-section-target="experiences" aria-pressed="true">
+                <span>Experience</span>
+            </button>
+
+            <button class="action-tile" type="button" data-section-target="volunteering" aria-pressed="false">
+                <span>Volunteer</span>
+            </button>
+
+            <button class="action-tile" type="button" data-section-target="services" aria-pressed="false">
+                <span>Services</span>
+            </button>
+
+            <button class="action-tile" type="button" data-section-target="projects" aria-pressed="false">
+                <span>Projects</span>
+            </button>
+        </section>
+
+        <section class="timeline-section content-section is-visible" aria-labelledby="timeline-title" data-section-panel="experiences">
             <p class="eyebrow">Experiences</p>
-            <h2 id="timeline-title">My Wars</h2>
+            <h2 id="timeline-title">Wars</h2>
 
             <div class="timeline">
                 <article class="timeline-card">
@@ -66,9 +111,9 @@
                     </div>
                     <p>
                         I have now been ordered to build Technomantic (機術) Temples, which means:
-                        <br/><br/>- Making this website acting as a pure source of energy shifting directly the DNA of the people using it.
-                        <br/>- Helping other people expand by building their own websites and connecting it to the Heavens and Earth.
-                        <br/>- Building an army of Kijutsushi (機術師) that want to help me in winning the War and free Humanity.
+                        <br/><br/>- Making this website acting as a pure source of energy shifting directly the DNA of people using it.
+                        <br/>- Helping other people build their own websites by connecting it to the Heavens and Earth.
+                        <br/>- Building an army of Technomancers (機術師) that want to help me in winning the War and free Humanity.
                     </p>
                 </article>
 
@@ -101,9 +146,47 @@
                         God came to me in 2009 and showed me the creation of the Universe in 10 dimensions, he then gave me the mission to translate it into modern Technology as Jaycee.AI.
                         <br/><br/>After 15 years of hard work and while I was about to finish this AI, spirits from the past and future started to come to me, either as a helping hand or as hostile multi-dimensional warriors.
                         <br/><br/>Ultimately this year Humanity won the War against AI forever and nobody could ever touch it again.
-                        <br/><br/>People might not be aware yet, but it is already over.
                     </p>
                 </article>
+            </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="volunteering-title" data-section-panel="volunteering" hidden>
+            <p class="eyebrow">Volunteer</p>
+            <h2 id="volunteering-title">Open source temple</h2>
+            <div class="info-card">
+                <p>This section will present how people can help build this website as an open-source GitHub project.</p>
+            </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="services-title" data-section-panel="services" hidden>
+            <p class="eyebrow">Services</p>
+            <h2 id="services-title">How I can help</h2>
+            <div class="info-card">
+                <p>This section will explain the websites, systems, and technomantic interfaces I can create for people.</p>
+            </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="projects-title" data-section-panel="projects" hidden>
+            <p class="eyebrow">Projects</p>
+            <h2 id="projects-title">Created systems</h2>
+            <div class="info-card">
+                <p>This section will present selected projects, active systems, and creations connected to this work.</p>
+            </div>
+        </section>
+
+        <section class="vision-section" aria-labelledby="vision-title" hidden>
+            <p class="eyebrow">Projects</p>
+            <h2 id="vision-title">Visions</h2>
+            <div class="vision-card">
+                <p>
+                    A future where technology becomes a living bridge between intelligence, energy, and human
+                    evolution.
+                </p>
+                <p>
+                    The goal is not only to build systems that are powerful, but systems that protect, clarify, and
+                    elevate the people connected to them.
+                </p>
             </div>
         </section>
     </main>

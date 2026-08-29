@@ -103,8 +103,139 @@ body::before {
     padding: 112px 0 64px;
 }
 
+.action-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 0;
+}
+
+.action-tile {
+    position: relative;
+    flex: 1 1 118px;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 12px;
+    border: 1px solid rgba(40, 255, 130, 0.22);
+    border-radius: 6px;
+    background:
+        linear-gradient(145deg, rgba(40, 255, 130, 0.1), rgba(8, 11, 10, 0.2) 42%),
+        rgba(8, 11, 10, 0.82);
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    color: inherit;
+    font: inherit;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.action-tile::after {
+    content: none;
+}
+
+.action-tile:hover,
+.action-tile:focus-visible,
+.action-tile.is-active {
+    border-color: rgba(40, 255, 130, 0.78);
+    background:
+        linear-gradient(145deg, var(--green), rgba(157, 255, 199, 0.86)),
+        var(--green);
+    color: #031007;
+    box-shadow:
+        0 10px 26px rgba(40, 255, 130, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    transform: translateY(-1px);
+}
+
+.action-tile span {
+    display: block;
+    margin-bottom: 0;
+    color: inherit;
+    font-weight: 700;
+    font-size: 0.86rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.funding-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding: 12px;
+    border: 1px solid rgba(40, 255, 130, 0.24);
+    border-radius: 8px;
+    background:
+        linear-gradient(135deg, rgba(40, 255, 130, 0.1), transparent 48%),
+        rgba(8, 11, 10, 0.78);
+    box-shadow:
+        0 18px 54px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.donation-button {
+    flex: 0 0 auto;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 15px;
+    border: 1px solid rgba(40, 255, 130, 0.72);
+    border-radius: 6px;
+    background:
+        linear-gradient(145deg, var(--green), rgba(157, 255, 199, 0.86)),
+        var(--green);
+    color: #031007;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 10px 26px rgba(40, 255, 130, 0.14);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.donation-button:hover,
+.donation-button:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 30px rgba(40, 255, 130, 0.2);
+}
+
+.funding-meter {
+    height: 9px;
+    padding: 2px;
+    border: 1px solid rgba(182, 188, 184, 0.16);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.38);
+    overflow: hidden;
+}
+
+.funding-meter span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--green), var(--green-soft));
+    box-shadow: 0 0 14px rgba(40, 255, 130, 0.38);
+}
+
+.funding-meta {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+}
+
 .profile-card,
-.timeline-card {
+.timeline-card,
+.vision-card,
+.info-card {
     position: relative;
     border: 1px solid rgba(182, 188, 184, 0.2);
     border-radius: 8px;
@@ -121,12 +252,14 @@ body::before {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 20px 22px;
-    align-items: center;
+    align-items: start;
     padding: clamp(22px, 5vw, 34px);
 }
 
 .profile-card::after,
-.timeline-card::after {
+.timeline-card::after,
+.vision-card::after,
+.info-card::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -137,14 +270,19 @@ body::before {
 
 .profile-heading {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
+    min-width: 0;
+}
+
+.profile-identity {
     min-width: 0;
 }
 
 .profile-avatar {
     flex: 0 0 auto;
     width: 62px;
+    margin-top: 2px;
     aspect-ratio: 1;
     border: 1px solid rgba(40, 255, 130, 0.36);
     border-radius: 4px;
@@ -170,9 +308,10 @@ body::before {
 
 .current-company {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
     gap: 10px;
+    min-height: 62px;
     min-width: 184px;
     padding: 8px 10px;
     border: 1px solid rgba(182, 188, 184, 0.16);
@@ -182,7 +321,7 @@ body::before {
 
 .current-company img {
     flex: 0 0 auto;
-    width: 34px;
+    width: 44px;
     aspect-ratio: 1;
     border: 1px solid rgba(40, 255, 130, 0.16);
     object-fit: contain;
@@ -225,6 +364,14 @@ h1 {
     text-transform: uppercase;
 }
 
+.profile-meta {
+    margin: 5px 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
 h2 {
     margin-bottom: 20px;
     font-size: clamp(1.8rem, 5vw, 2.8rem);
@@ -237,34 +384,100 @@ h3 {
     line-height: 1.05;
 }
 
-.profile-body > p,
-.timeline-card > p:last-child {
+.profile-body > p {
+    grid-column: 1 / -1;
     margin-bottom: 0;
+}
+
+.profile-body > p,
+.timeline-card > p:last-child,
+.vision-card p {
     color: var(--muted);
     font-size: 1.08rem;
     line-height: 1.55;
 }
 
-.profile-body > p {
+.profile-contact {
     grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 2px;
+    row-gap: 8px;
+    margin-top: -4px;
 }
 
-.timeline-section {
+.contact-label {
+    color: var(--muted);
+    font-size: 0.94rem;
+    font-weight: 500;
+    line-height: 1;
+    margin-right: 5px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-transform: none;
+}
+
+.profile-contact a {
+    width: 28px;
+    min-height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: var(--green-soft);
+    text-decoration: none;
+    opacity: 0.82;
+    transition: color 160ms ease, opacity 160ms ease, transform 160ms ease;
+}
+
+.profile-contact a:hover,
+.profile-contact a:focus-visible {
+    color: var(--green);
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.profile-contact svg {
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
+.content-section,
+.vision-section {
     margin-top: 44px;
 }
 
-.timeline {
-    display: grid;
-    gap: 34px;
-}
-
-.timeline-card {
+.timeline-card,
+.vision-card,
+.info-card {
     width: 100%;
     margin: 0 auto;
     padding: 24px;
     background:
         linear-gradient(135deg, rgba(53, 59, 56, 0.9), rgba(13, 17, 15, 0.96)),
         var(--card-strong);
+}
+
+.vision-card p,
+.info-card p {
+    margin-bottom: 14px;
+}
+
+.timeline-card > p:last-child,
+.vision-card p:last-child,
+.info-card p:last-child {
+    margin-bottom: 0;
+}
+
+.timeline {
+    display: grid;
+    gap: 34px;
 }
 
 .job-header {
@@ -297,7 +510,7 @@ h3 {
     bottom: -35px;
     width: 1px;
     height: 35px;
-    background: linear-gradient(to bottom, var(--green), var(--line), transparent);
+    background: linear-gradient(to top, var(--green), var(--line), transparent);
     box-shadow: 0 0 16px rgba(40, 255, 130, 0.54);
 }
 
@@ -339,6 +552,19 @@ h3 {
         width: 34px;
     }
 
+    .action-tile {
+        flex-basis: calc(50% - 4px);
+    }
+
+    .funding-card {
+        grid-template-columns: auto minmax(120px, 1fr);
+    }
+
+    .funding-meta {
+        grid-column: 1 / -1;
+        text-align: right;
+    }
+
     .profile-card {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -350,8 +576,13 @@ h3 {
 
     .current-company {
         justify-content: flex-start;
+        min-height: 40px;
         min-width: 0;
         width: 100%;
+    }
+
+    .current-company img {
+        width: 32px;
     }
 
     .job-header {
