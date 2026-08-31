@@ -2,6 +2,7 @@ const sectionButtons = document.querySelectorAll("[data-section-target]");
 const sectionLinks = document.querySelectorAll("[data-section-link]");
 const sectionPanels = document.querySelectorAll("[data-section-panel]");
 const defaultSection = "experiences";
+const pageTheme = document.body.dataset.theme;
 
 function getKnownSection(target) {
     return Array.from(sectionPanels).some((panel) => panel.dataset.sectionPanel === target)
@@ -45,4 +46,16 @@ window.addEventListener("hashchange", () => {
     showSection(window.location.hash.slice(1));
 });
 
+function applyPageTheme() {
+    if (pageTheme && window.JayceeShared) {
+        window.JayceeShared.setTheme(pageTheme);
+    }
+}
+
 showSection(window.location.hash.slice(1) || defaultSection);
+
+if (document.readyState === "loading") {
+    window.addEventListener("DOMContentLoaded", applyPageTheme);
+} else {
+    applyPageTheme();
+}
