@@ -269,13 +269,13 @@ body::after {
 
 .theme-switcher {
     position: fixed;
-    top: 74px;
+    top: 66px;
     left: 50%;
     z-index: 4;
     display: flex;
-    gap: 6px;
-    width: min(100% - 28px, 560px);
-    padding: 6px;
+    gap: 4px;
+    width: min(100% - 28px, 420px);
+    padding: 4px;
     border: 1px solid var(--field-border-soft);
     border-radius: 8px;
     background: var(--banner-bg);
@@ -286,14 +286,14 @@ body::after {
 
 .theme-choice {
     flex: 1 1 0;
-    min-height: 31px;
-    padding: 7px 8px;
+    min-height: 26px;
+    padding: 6px 7px;
     border: 1px solid transparent;
     border-radius: 6px;
     background: var(--page-bg);
     color: var(--muted);
     font: inherit;
-    font-size: 0.78rem;
+    font-size: 0.7rem;
     font-weight: 700;
     line-height: 1;
     text-transform: uppercase;
@@ -313,7 +313,7 @@ body::after {
 .card-page {
     width: min(100% - 28px, 560px);
     margin: 0 auto;
-    padding: 128px 0 96px;
+    padding: 112px 0 96px;
 }
 
 .action-grid {
@@ -792,7 +792,7 @@ h3 {
 @media (max-width: 620px) {
     .card-page {
         width: min(100% - 20px, 560px);
-        padding: 128px 0 96px;
+        padding: 118px 0 96px;
     }
 
     .info-banner {
@@ -801,16 +801,15 @@ h3 {
     }
 
     .theme-switcher {
-        top: 82px;
+        top: 76px;
         width: min(100% - 20px, 560px);
-        gap: 4px;
-        padding: 5px;
+        padding: 4px;
     }
 
     .theme-choice {
-        min-height: 30px;
-        padding: 7px 5px;
-        font-size: 0.72rem;
+        min-height: 25px;
+        padding: 6px 4px;
+        font-size: 0.66rem;
     }
 
     .banner-inner {
