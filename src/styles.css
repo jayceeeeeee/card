@@ -156,6 +156,10 @@ body[data-theme="aurora"] {
     box-sizing: border-box;
 }
 
+[hidden] {
+    display: none !important;
+}
+
 html {
     scroll-behavior: smooth;
     background: var(--page-bg);

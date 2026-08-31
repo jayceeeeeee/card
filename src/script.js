@@ -3,7 +3,7 @@ const sectionLinks = document.querySelectorAll("[data-section-link]");
 const sectionPanels = document.querySelectorAll("[data-section-panel]");
 const themeButtons = document.querySelectorAll("[data-theme-choice]");
 const defaultSection = "experiences";
-const defaultTheme = "matrix";
+const defaultTheme = "lotus";
 const themeStorageKey = "jaycee-profile-theme";
 
 function getStoredTheme() {
