@@ -295,6 +295,95 @@ h3 {
     gap: 34px;
 }
 
+.experience-card {
+    display: grid;
+    gap: 14px;
+}
+
+.experience-card h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(1.35rem, 3.4vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.05;
+}
+
+.experience-body {
+    display: grid;
+    grid-template-columns: minmax(120px, 0.42fr) minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.experience-media {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid var(--neon-border);
+    border-radius: 6px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 48%),
+        var(--surface);
+    text-decoration: none;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 14px 34px rgba(0, 0, 0, 0.28);
+    transition: border-color 160ms ease;
+}
+
+.experience-media:hover,
+.experience-media:focus-visible {
+    border-color: var(--neon-border-strong);
+}
+
+.experience-play {
+    width: 28px;
+    height: 32px;
+    margin-left: 3px;
+    color: var(--accent);
+    fill: none;
+    stroke: currentColor;
+    stroke-linejoin: round;
+    stroke-width: 2;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 12px var(--neon-shadow));
+    transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.experience-media:hover .experience-play,
+.experience-media:focus-visible .experience-play {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.experience-copy p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 1.04rem;
+    line-height: 1.5;
+}
+
+.experience-result,
+.experience-method {
+    display: block;
+}
+
+.experience-result {
+    color: var(--text);
+    font-weight: 650;
+}
+
+.experience-result b {
+    color: var(--accent);
+}
+
+.experience-method {
+    margin-top: 8px;
+}
+
 .job-header {
     display: flex;
     align-items: flex-start;
@@ -447,5 +536,13 @@ h3 {
 
     .job-duration {
         text-align: left;
+    }
+
+    .experience-body {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-media {
+        max-width: 220px;
     }
 }

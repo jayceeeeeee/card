@@ -1,7 +1,7 @@
 const sectionButtons = document.querySelectorAll("[data-section-target]");
 const sectionLinks = document.querySelectorAll("[data-section-link]");
 const sectionPanels = document.querySelectorAll("[data-section-panel]");
-const defaultSection = "experiences";
+const defaultSection = "services";
 const pageTheme = document.body.dataset.theme;
 
 function getKnownSection(target) {
