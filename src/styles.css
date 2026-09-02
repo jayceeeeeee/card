@@ -555,6 +555,24 @@ h3 {
     padding: 0;
 }
 
+.contact-actions {
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    gap: 8px;
+}
+
+.contact-link svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
 .timeline-link:hover,
 .timeline-link:focus-visible,
 .timeline-icon:hover,
