@@ -2,8 +2,13 @@ const sectionButtons = document.querySelectorAll("[data-section-target]");
 const sectionLinks = document.querySelectorAll("[data-section-link]");
 const sectionPanels = document.querySelectorAll("[data-section-panel]");
 const projectShareButtons = document.querySelectorAll("[data-share-project]");
-const defaultSection = "services";
 const pageTheme = document.body.dataset.theme;
+
+function getDefaultSection() {
+    return sectionButtons[0]?.dataset.sectionTarget || sectionPanels[0]?.dataset.sectionPanel || "";
+}
+
+const defaultSection = getDefaultSection();
 
 function getKnownSection(target) {
     return Array.from(sectionPanels).some((panel) => panel.dataset.sectionPanel === target)
