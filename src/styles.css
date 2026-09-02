@@ -278,17 +278,25 @@ h3 {
     gap: 34px;
 }
 
+.projects-grid {
+    display: grid;
+    gap: 34px;
+}
+
 .service-card {
     overflow: visible;
 }
 
-.service-card.is-locked {
+.service-card.is-locked,
+.info-card.is-locked {
     border-color: var(--field-border-soft);
     opacity: 0.72;
 }
 
 .service-card.is-locked h3,
-.service-card.is-locked .service-copy {
+.service-card.is-locked .service-copy,
+.info-card.is-locked h3,
+.info-card.is-locked p {
     opacity: 0.78;
 }
 
@@ -317,7 +325,8 @@ h3 {
 }
 
 .service-intro b,
-.service-list b {
+.service-list b,
+.info-card b {
     color: var(--accent);
 }
 
@@ -538,7 +547,8 @@ h3 {
 }
 
 .timeline-card:not(:last-child)::before,
-.service-card:not(:last-child)::before {
+.service-card:not(:last-child)::before,
+.projects-grid .info-card:not(:last-child)::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -564,7 +574,8 @@ h3 {
 }
 
 .timeline-card:last-child .timeline-dot,
-.service-card:last-child .timeline-dot {
+.service-card:last-child .timeline-dot,
+.projects-grid .info-card:last-child .timeline-dot {
     display: none;
 }
 
