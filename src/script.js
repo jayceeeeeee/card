@@ -11,6 +11,14 @@ function getKnownSection(target) {
         : defaultSection;
 }
 
+function getSectionUrl(section) {
+    if (section === defaultSection) {
+        return `${window.location.pathname}${window.location.search}`;
+    }
+
+    return `#${section}`;
+}
+
 function showSection(target, options = {}) {
     const nextSection = getKnownSection(target);
 
@@ -27,7 +35,7 @@ function showSection(target, options = {}) {
     });
 
     if (options.updateHash) {
-        history.pushState(null, "", `#${nextSection}`);
+        history.pushState(null, "", getSectionUrl(nextSection));
     }
 }
 
@@ -95,7 +103,12 @@ function applyPageTheme() {
     }
 }
 
-showSection(window.location.hash.slice(1) || defaultSection);
+const initialSection = getKnownSection(window.location.hash.slice(1) || defaultSection);
+showSection(initialSection);
+
+if (initialSection === defaultSection && window.location.hash) {
+    history.replaceState(null, "", getSectionUrl(defaultSection));
+}
 
 if (document.readyState === "loading") {
     window.addEventListener("DOMContentLoaded", applyPageTheme);
