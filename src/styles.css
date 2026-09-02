@@ -395,11 +395,40 @@ h3 {
     background:
         linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 48%),
         var(--surface);
+    background-position: center;
+    background-size: cover;
     text-decoration: none;
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.1),
         0 14px 34px rgba(0, 0, 0, 0.28);
+    overflow: hidden;
     transition: border-color 160ms ease;
+}
+
+.experience-media::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.48);
+}
+
+.experience-media-youtube {
+    background-image:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 48%),
+        url("images/youtube.jaycee.ai.jpg");
+}
+
+.experience-media-notes {
+    background-image:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 48%),
+        url("images/notes.jaycee.ai.jpg");
+}
+
+.experience-media-jaycee {
+    background-image:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 48%),
+        url("images/jaycee.ai.jpg");
 }
 
 .experience-media:hover,
@@ -407,13 +436,15 @@ h3 {
     border-color: var(--neon-border-strong);
 }
 
-.experience-play {
-    width: 28px;
-    height: 32px;
-    margin-left: 3px;
+.experience-link-icon {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
     color: var(--accent);
     fill: none;
     stroke: currentColor;
+    stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 2;
     opacity: 0.9;
@@ -421,8 +452,8 @@ h3 {
     transition: transform 160ms ease, opacity 160ms ease;
 }
 
-.experience-media:hover .experience-play,
-.experience-media:focus-visible .experience-play {
+.experience-media:hover .experience-link-icon,
+.experience-media:focus-visible .experience-link-icon {
     opacity: 1;
     transform: translateY(-1px);
 }
@@ -641,6 +672,11 @@ h3 {
     }
 
     .experience-media {
-        max-width: 220px;
+        aspect-ratio: auto;
+        min-height: 88px;
+        max-height: 118px;
+        height: 24vw;
+        background-position: center;
+        background-size: cover;
     }
 }
