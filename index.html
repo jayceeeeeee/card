@@ -279,41 +279,7 @@
     <jaycee-footer></jaycee-footer>
 
     <script src="https://shared.jaycee.ai/src/js/jaycee-shared.js"></script>
-    <script>
-        window.JayceeAuthConfig = {
-            authPagePath: "/auth.html",
-            accountPagePath: "/account.html",
-            afterSignInPath: "/",
-        };
-    </script>
     <script src="https://shared.jaycee.ai/src/js/jaycee-auth.js"></script>
-    <script>
-        window.addEventListener("load", () => {
-            const banner = document.querySelector("jaycee-banner");
-
-            if (!banner) {
-                return;
-            }
-
-            function restoreLocalAuthLinks() {
-                banner.setAttribute("login-href", "/auth.html");
-                banner.setAttribute("signup-href", "/auth.html?mode=signup");
-                banner.setAttribute("account-href", "/account.html");
-
-                banner.querySelectorAll("a[href$='/src/auth.html?mode=login']").forEach((link) => {
-                    link.href = "/auth.html?mode=login";
-                });
-
-                banner.querySelectorAll("a[href$='/src/auth.html?mode=signup']").forEach((link) => {
-                    link.href = "/auth.html?mode=signup";
-                });
-            }
-
-            restoreLocalAuthLinks();
-            window.setTimeout(restoreLocalAuthLinks, 500);
-            window.setTimeout(restoreLocalAuthLinks, 1500);
-        });
-    </script>
     <script src="src/script.js"></script>
 </body>
 </html>
